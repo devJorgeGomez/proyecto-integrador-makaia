@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Prueba {
+public class Prueba {
+    String estern;
 }
