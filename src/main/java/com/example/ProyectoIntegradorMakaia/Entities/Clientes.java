@@ -3,26 +3,27 @@ package com.example.ProyectoIntegradorMakaia.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "aeropuertos")
-public class Aeropuertos {
+@Table(name = "clientes")
+public class Clientes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_aeropuerto;
+    private int id_cliente;
 
     @Column(nullable = false)
-    private String nombre_aeropuerto;
+    private String nombre;
 
     @Column(nullable = false)
-    private String ciudad;
+    private String apellido;
 
     @Column(nullable = false)
-    private String pais;
+    private Date fecha_nacimiento;
 
     @Column(nullable = false)
-    private String codigo_iata_oaci;
+    private char genero;
 
 }

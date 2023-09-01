@@ -6,23 +6,20 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "aeropuertos")
-public class Aeropuertos {
+@Table(name = "info_contacto")
+public class Info_contacto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_aeropuerto;
+    private int id_info;
 
     @Column(nullable = false)
-    private String nombre_aeropuerto;
+    private String email;
 
     @Column(nullable = false)
-    private String ciudad;
+    private int numero_telefono;
 
     @Column(nullable = false)
-    private String pais;
-
-    @Column(nullable = false)
-    private String codigo_iata_oaci;
+    private String direccion;
 
 }
