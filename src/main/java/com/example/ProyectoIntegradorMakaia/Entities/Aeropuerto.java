@@ -3,15 +3,19 @@ package com.example.ProyectoIntegradorMakaia.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "aeropuertos")
-public class Aeropuertos {
+@Table(name = "aeropuerto")
+public class Aeropuerto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_aeropuerto;
+    private Long id_aeropuerto;
 
     @Column(nullable = false)
     private String nombre_aeropuerto;
@@ -24,5 +28,11 @@ public class Aeropuertos {
 
     @Column(nullable = false)
     private String codigo_iata_oaci;
+
+    @OneToMany(mappedBy = "aeropuertoOrigen", cascade = CascadeType.ALL)
+    private Set<Vuelo> vuelosOrigen;
+
+    @OneToMany(mappedBy = "aeropuertoDestino")
+    private List<Vuelo> vuelosDestino;
 
 }

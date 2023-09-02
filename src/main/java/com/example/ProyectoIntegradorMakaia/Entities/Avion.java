@@ -7,23 +7,20 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "clientes")
-public class Clientes {
+@Table(name = "avion")
+public class Avion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_cliente;
+    private Long id_avion;
 
     @Column(nullable = false)
-    private String nombre;
+    private String modelo_avion;
 
     @Column(nullable = false)
-    private String apellido;
+    private int capacidad_pasajeros;
 
     @Column(nullable = false)
-    private Date fecha_nacimiento;
-
-    @Column(nullable = false)
-    private char genero;
+    private Date anio_fabricacion;
 
 }

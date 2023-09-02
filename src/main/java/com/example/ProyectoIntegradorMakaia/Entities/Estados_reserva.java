@@ -6,12 +6,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "estados_reserva")
+@Table(name = "estado_reserva")
 public class Estados_reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_estado;
+    private Long id_estado;
 
     @Column(nullable = false)
     private String nombre_estado;
