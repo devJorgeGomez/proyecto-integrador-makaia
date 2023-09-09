@@ -30,12 +30,17 @@ public class AirportController {
     // Obtener aeropuerto por id. Si se encuentra status ok de lo contrario not found
     @GetMapping("/{id}")
     public ResponseEntity<Aeropuerto> getAirportById(@PathVariable Long id) {
+
+        // Llama al servicio para obtener su id de la base de datos
         Aeropuerto aeropuerto = aeropuertoService.getAirportById(id);
 
+        // Aqui se verifica que el id no sea nulo
         if (aeropuerto != null) {
+            // en caso de que se encuentre retorna una peticion http 200 que significa que esta correcto
             return new ResponseEntity<>(aeropuerto, HttpStatus.OK);
         }
 
+        // y en caso de no encontrar el aeropuerto por su id la respuesta sera un http 404 que significa no encontrado
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
